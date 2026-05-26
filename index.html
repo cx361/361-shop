@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><361 SHOP</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
                 /* Logo style */
                 .logo-361 {
@@ -60,9 +62,27 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             background: #f9f9f9;
             position: sticky; /* Hält das Bild im Sichtfeld */
             top: 20px;
+            position: relative;
+        }
+
+        #view-indicator {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding-bottom: 2px;
+            width: 100%;
+            background: transparent;
         }
 
         #main-jersey-image { width: 100%; height: 100%; object-fit: contain; cursor: pointer; padding: 20px; }
@@ -79,6 +99,13 @@
 
         .product-info h2 { font-size: 16px; margin-bottom: 8px; font-weight: 700; letter-spacing: 0.5px; }
         .product-info p { font-size: 12px; color: #666; line-height: 1.4; margin-bottom: 15px; }
+        .countdown-hint {
+            color: #888;
+            font-size: 12px;
+            margin-top: 2px;
+            margin-bottom: 10px;
+            letter-spacing: 0.2px;
+        }
 
         /* === COUNTDOWN STYLES === */
         .countdown-container {
@@ -244,7 +271,7 @@
             <div id="nav-left" class="nav-arrow">←</div>
             <img id="main-jersey-image" src="jersey_baby_front.jpeg" alt="VICO Jersey">
             <div id="nav-right" class="nav-arrow">→</div>
-            <div id="view-indicator" style="text-align:center; font-size:10px; font-weight:bold; padding-bottom:10px; letter-spacing:1px;">VORDERSEITE</div>
+            <div id="view-indicator">VORDERSEITE</div>
         </section>
 
         <section class="order-section">
@@ -338,6 +365,7 @@
         <summary>GRÖSSE & PASSFORM</summary>
         <div class="accordion-content">
             <p>Das Trikot hat einen sportlichen, leicht lockeren Schnitt (Athletic Fit). Wenn du es lieber sehr baggy trägst, wähle eine Nummer größer.</p>
+            <img src="size-chart.jpg" alt="Größentabelle" style="max-width:100%;margin-top:12px;border:1px solid #eee;border-radius:8px;box-shadow:0 2px 8px #0001;">
         </div>
     </details>
 
@@ -462,23 +490,18 @@
             const now = new Date().getTime();
             const distance = targetDate - now;
 
-            if (distance < 0) {
-                countdownEl.textContent = "00:00:00:00";
-                clearInterval(countdownInterval);
-                return;
+            let days = 0, hours = 0, minutes = 0, seconds = 0;
+            if (distance > 0) {
+                days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                seconds = Math.floor((distance % (1000 * 60)) / 1000);
             }
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            const d = String(days).padStart(2, '0');
-            const h = String(hours).padStart(2, '0');
-            const m = String(minutes).padStart(2, '0');
-            const s = String(seconds).padStart(2, '0');
-
-            countdownEl.textContent = `${d}:${h}:${m}:${s}`;
+            countdownEl.textContent = `Bestellfrist: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            if (distance <= 0) {
+                clearInterval(countdownInterval);
+            }
         }
 
         updateCountdown();
