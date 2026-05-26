@@ -73,6 +73,16 @@
         .product-info h2 { font-family: 'Syncopate', sans-serif; font-size: 16px; margin-bottom: 8px; }
         .product-info p { font-size: 12px; color: #666; line-height: 1.4; margin-bottom: 15px; }
 
+        /* === COUNTDOWN STYLES === */
+        .countdown-container {
+            font-family: 'Syncopate', sans-serif;
+            color: #ff0000;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
         .donation-box {
             background: #1a1a1a;
             color: #fff;
@@ -223,6 +233,7 @@
             <div id="form-container">
                 <div class="product-info">
                     <h2><361 x VICO61 TRIKOT</h2>
+                    <div id="countdown" class="countdown-container">00:00:00:00</div>
                     <p>Vom 11. Juni bis 19. Juli 2026 findet in den USA, Kanada & Mexiko die Fußball-WM der Männer statt.<br>
                         Im Herzen von Kreuzberg wird das Spiel auf den Straßen ausgetragen und dafür darf das offizielle Trikot nicht fehlen!<br>
                         <br>
@@ -420,6 +431,36 @@
                 window.scrollTo(0,0);
             });
         };
+
+        // === COUNTDOWN ENGINE ===
+        const targetDate = new Date("2026-06-01T12:00:00+02:00").getTime(); // Berlin Time (CEST)
+        const countdownEl = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                countdownEl.textContent = "00:00:00:00";
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const d = String(days).padStart(2, '0');
+            const h = String(hours).padStart(2, '0');
+            const m = String(minutes).padStart(2, '0');
+            const s = String(seconds).padStart(2, '0');
+
+            countdownEl.textContent = `${d}:${h}:${m}:${s}`;
+        }
+
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
