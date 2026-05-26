@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><361 SHOP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { 
-            font-family: 'Inter', sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; 
             background-color: #fff; 
             color: #000; 
             min-height: 100vh;
@@ -25,10 +24,11 @@
 
         header {
             padding: 30px 60px;
-            font-family: 'Syncopate', sans-serif;
             font-size: 24px;
             text-transform: uppercase;
             text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         main {
@@ -70,12 +70,11 @@
 
         .order-section { flex: 1; max-width: 420px; padding-bottom: 50px; }
 
-        .product-info h2 { font-family: 'Syncopate', sans-serif; font-size: 16px; margin-bottom: 8px; }
+        .product-info h2 { font-size: 16px; margin-bottom: 8px; font-weight: 700; letter-spacing: 0.5px; }
         .product-info p { font-size: 12px; color: #666; line-height: 1.4; margin-bottom: 15px; }
 
         /* === COUNTDOWN STYLES === */
         .countdown-container {
-            font-family: 'Syncopate', sans-serif;
             color: #ff0000;
             font-size: 20px;
             font-weight: 700;
@@ -92,10 +91,11 @@
         }
 
         .price-display {
-            font-family: 'Syncopate', sans-serif;
             font-size: 32px;
             margin-bottom: 10px;
             display: block;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .slider-container { 
@@ -139,13 +139,15 @@
             display: flex;
             justify-content: space-between;
             font-size: 10px;
-            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
             opacity: 0.7;
+            letter-spacing: 0.5px;
         }
 
         input, select {
             width: 100%; padding: 12px; margin-bottom: 10px;
-            border: 1px solid #000; font-family: 'Inter', sans-serif;
+            border: 1px solid #000; 
+            font-family: inherit;
             font-size: 13px; border-radius: 0;
         }
 
@@ -153,8 +155,11 @@
 
         button {
             width: 100%; padding: 18px; background: #000; color: #fff;
-            border: none; font-family: 'Syncopate', sans-serif;
+            border: none; 
+            font-family: inherit;
+            font-weight: 700;
             font-size: 13px; cursor: pointer;
+            letter-spacing: 0.5px;
         }
 
         button:disabled { background: #ccc; }
@@ -164,7 +169,8 @@
         .paypal-button {
             display: block; margin-top: 20px; padding: 18px;
             background: #0070ba; color: #fff; text-decoration: none;
-            font-family: 'Syncopate', sans-serif; font-size: 12px;
+            font-weight: 700; font-size: 12px;
+            letter-spacing: 0.5px;
         }
         
         /* === ACCORDION STYLES === */
@@ -180,7 +186,6 @@
         .product-accordion summary {
             list-style: none; /* Entfernt Standard-Pfeil */
             padding: 20px 0;
-            font-family: 'Inter', sans-serif;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
@@ -242,7 +247,7 @@
                 </div>
 
                 <div class="donation-box">
-                    <span id="priceLabel" style="font-size: 10px; font-family: 'Syncopate'; opacity: 0.8;">DEIN PREIS</span>
+                    <span id="priceLabel" style="font-size: 10px; font-weight: 700; opacity: 0.8; letter-spacing: 0.5px;">DEIN PREIS</span>
                     <div class="price-display" id="totalDisplay">25,00 €</div>
                     
                     <div class="slider-container">
@@ -303,7 +308,7 @@
             </div>
 
             <div id="success-screen" class="hidden">
-                <h2 style="font-family:'Syncopate'; font-size:14px;">ORDER CONFIRMED</h2>
+                <h2 style="font-size:14px; font-weight: 700; letter-spacing: 0.5px;">ORDER CONFIRMED</h2>
                 <p style="font-size:12px; margin: 20px 0;">DEINE NUMMER: <strong id="orderIDDisplay"></strong></p>
                 <p style="font-size:11px; color:#666;">Bezahle den Betrag via PayPal (ID im Betreff angeben):</p>
                 <a id="paypalLink" href="#" target="_blank" class="paypal-button">PER PAYPAL ZAHLEN</a>
