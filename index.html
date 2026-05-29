@@ -62,6 +62,19 @@
         }
 
         .gallery-section {
+                    /* Ensure gallery images fit nicely in the frame */
+                    #main-gallery-image {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                        margin: 0;
+                        padding: 0;
+                        border-radius: 0;
+                        box-shadow: none;
+                        background: none;
+                        cursor: pointer;
+                    }
             flex: 1;
             max-width: 450px;
             height: 55vh;
@@ -94,9 +107,21 @@
         #main-jersey-image { width: 100%; height: 100%; object-fit: contain; cursor: pointer; padding: 20px; }
         
         .nav-arrow {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            font-size: 24px; cursor: pointer; padding: 15px; z-index: 10;
-            background: rgba(255,255,255,0.7); border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            cursor: pointer;
+            padding: 7px;
+            z-index: 10;
+            background: rgba(255,255,255,0.7);
+            border-radius: 50%;
+            min-width: 28px;
+            min-height: 28px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         #nav-left { left: 10px; }
         #nav-right { right: 10px; }
@@ -275,9 +300,8 @@
     <main>
         <section class="gallery-section">
             <div id="nav-left" class="nav-arrow">←</div>
-            <img id="main-jersey-image" src="jersey_baby_front.jpeg" alt="VICO Jersey">
+            <img id="main-gallery-image" src="trikot_DR_ben.jpg" alt="Gallery Image">
             <div id="nav-right" class="nav-arrow">→</div>
-            <div id="view-indicator">VORDERSEITE</div>
         </section>
 
         <section class="order-section">
@@ -285,6 +309,7 @@
                 <div class="product-info">
                     <h2><361 x VICO61 TRIKOT</h2>
                     <div id="countdown" class="countdown-container">00:00:00:00</div>
+                    <div id="delivery-date" class="countdown-hint"></div>
                     <p>Vom 11. Juni bis 19. Juli 2026 findet in den USA, Kanada & Mexiko die Fußball-WM der Männer statt.<br>
                         Im Herzen von Kreuzberg wird das Spiel auf den Straßen ausgetragen und dafür darf das offizielle Trikot nicht fehlen!<br>
                         <br>
@@ -294,13 +319,12 @@
 
                 <div class="donation-box">
                     <span id="priceLabel" style="font-size: 10px; font-weight: 700; opacity: 0.8; letter-spacing: 0.5px;">DEIN PREIS</span>
-                    <div class="price-display" id="totalDisplay">25,00 €</div>
-                    
+                    <div class="price-display" id="totalDisplay">30,00 €</div>
                     <div class="slider-container">
-                        <input type="range" id="priceSlider" min="25" max="61" value="25" step="1">
+                        <input type="range" id="priceSlider" min="30" max="61" value="30" step="1">
                         <div class="mark-base"></div>
                         <div class="slider-labels">
-                            <span>MIN 25€</span>
+                            <span>MIN 30€</span>
                             <span>MAX 61€</span>
                         </div>
                     </div>
@@ -309,8 +333,8 @@
 
                 <form id="orderForm">
                     <select name="farbe" id="farbeSelect" required>
-                        <option value="hellblau">HELLBLAU</option>
-                        <option value="dunkelblau">DUNKELBLAU</option>
+                        <option value="dunkelblau">DUNKELBLAU (DEFEND ROJAVA)</option>
+                        <option value="hellblau">HELLBLAU (FREE GAZA)</option>
                     </select>
 
                     <div class="flex-row">
@@ -363,14 +387,14 @@
     <details>
         <summary>DETAILS</summary>
         <div class="accordion-content">
-            <p>150gsm High Performance Interlock Polyester. High-Density Stick auf der Brust & hochwertiger Vinyldruck auf dem Rücken. Atmungsaktiv und schnelltrocknend – perfekt für den Court oder die Straße.</p>
+            <p>180gsm Breathable Mesh Polyester. High-Density Stick auf der Brust & hochwertiger Vinyldruck auf dem Rücken. Atmungsaktiv und schnelltrocknend.</p>
         </div>
     </details>
 
     <details>
         <summary>GRÖSSE & PASSFORM</summary>
         <div class="accordion-content">
-            <p>Das Trikot hat einen sportlichen, leicht lockeren Schnitt (Athletic Fit). Wenn du es lieber sehr baggy trägst, wähle eine Nummer größer.</p>
+            <p>Das Trikot hat einen sportlichen, leicht lockeren Schnitt (Athletic Fit). Wenn du es lieber baggy trägst, wähle eine Nummer größer.</p>
             <img src="size-chart.jpg" alt="Größentabelle" style="max-width:100%;margin-top:12px;border:1px solid #eee;border-radius:8px;box-shadow:0 2px 8px #0001;">
         </div>
     </details>
@@ -379,9 +403,9 @@
         <summary>HERSTELLUNGSINFORMATIONEN</summary>
         <div class="accordion-content">
             <p>Das Trikot haben wir von Grund auf selbst in Kreuzberg designed.<br>
-                Nach intensiver Recherche und direktem Austausch mit Fabriken in Berlin, Portugal und der Türkei haben wir uns bei der Produktion bewusst für einen spezialisierten Hersteller in Guangzhou entschieden.<br>
-                Das Team von Healong war von unserem Konzept sehr überzeugt und hat angeboten uns mit ihrer technischen Expertise bei der Umsetzung zu unterstützen. <br>
-                Sie zählen weltweit zu den Top-Herstellern für Performance- und Teamwear und weisen exzellente Zertifikate in den Bereichen faire Arbeitsbedingungen, moderne Technologie und Ökoschutz vor. (BSCI,SEDEX,ISO 9001, Oeko-Tex Standard 100)<br>
+                Nach intensiver Recherche und direktem Austausch mit verschiedenen Herstellern haben wir uns bei der Produktion bewusst für einen spezialisierten Experten in Guangzhou entschieden.<br>
+                Das Team von HEALY Apparel war von unserem Konzept sehr überzeugt und hat angeboten uns mit ihrer technischen Expertise bei der Umsetzung zu unterstützen. <br>
+                Sie zählen weltweit zu den Top-Herstellern für Performance- und Teamwear und weisen exzellente Zertifikate in den Bereichen faire Arbeitsbedingungen, moderne Technologie und Ökoschutz vor. (BSCI,WRAP,ISO 9001, ISO 14001)<br>
                 So können wir ein technisch hochqualitatives Produkt garantieren, das unter fairen Bedingungen produziert und zu einem ehrlichen Preis angeboten werden kann.
             </p>
         </div>
@@ -402,56 +426,69 @@
     </footer>
 
     <script>
+
+                // === PREIS SLIDER LOGIK ===
+                const slider = document.getElementById('priceSlider');
+                const totalDisplay = document.getElementById('totalDisplay');
+                const versandart = document.getElementById('versandart');
+
+                function calculateTotal() {
+                    let base = Math.max(30, parseInt(slider.value));
+                    let shipping = (versandart.value === 'versand') ? 5 : 0;
+                    let total = base + shipping;
+                    totalDisplay.textContent = total.toFixed(2).replace('.', ',') + " €";
+                    return total;
+                }
+
+                slider.oninput = calculateTotal;
+                versandart.onchange = () => {
+                    calculateTotal();
+                    document.getElementById('user-data-section').classList.toggle('hidden', versandart.value === "");
+                    document.getElementById('pickup-field').classList.toggle('hidden', versandart.value !== 'pickup');
+                    document.getElementById('address-fields').classList.toggle('hidden', versandart.value !== 'versand');
+                    checkValidation();
+                    // Fokus-Fix: Zum Button scrollen, wenn Formular aufklappt
+                    if(versandart.value !== "") {
+                        setTimeout(() => {
+                            document.getElementById('submitBtn').scrollIntoView({ behavior: 'smooth', block: 'end' });
+                        }, 100);
+                    }
+                };
+                // Initial anzeigen
+                calculateTotal();
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwrg36-1bzzSIzTnI-9UyA3E9nWFrL3cwDcT7zNUnDvmiH4LOPcfEKJBFTUW_JIAOeL/exec';
         const PAYPAL_EMAIL = "carlojancke@GMAIL.COM"; 
         const SECRET_CODE = "361";
 
-        const images = {
-            'hellblau': { front: 'jersey_baby_front.jpeg', back: 'jersey_baby_back.jpeg' },
-            'dunkelblau': { front: 'jersey_navy_front.jpeg', back: 'jersey_navy_back.jpeg' }
-        };
 
-        let currentSide = 'front';
-        let currentColor = 'hellblau';
-
-        const slider = document.getElementById('priceSlider');
-        const totalDisplay = document.getElementById('totalDisplay');
-        const versandart = document.getElementById('versandart');
-
-        function calculateTotal() {
-            let base = parseInt(slider.value);
-            let shipping = (versandart.value === 'versand') ? 5 : 0;
-            let total = base + shipping;
-            totalDisplay.textContent = total.toFixed(2).replace('.', ',') + " €";
-            return total;
+        // Gallery images in the requested order
+        const galleryImages = [
+            'trikots_vorne.jpg',
+            'trikots_hinten.jpg',
+            'trikot_logo.jpg',
+            'trikot_DR_ben.jpg',
+            'trikot_FG_ben.jpg',
+            'trikot_DR_tor.jpg'
+        ];
+        let currentGalleryIndex = 0;
+        const galleryImg = document.getElementById('main-gallery-image');
+        function showGalleryImage(idx) {
+            galleryImg.src = galleryImages[idx];
         }
-
-        slider.oninput = calculateTotal;
-        versandart.onchange = () => {
-            calculateTotal();
-            document.getElementById('user-data-section').classList.toggle('hidden', versandart.value === "");
-            document.getElementById('pickup-field').classList.toggle('hidden', versandart.value !== 'pickup');
-            document.getElementById('address-fields').classList.toggle('hidden', versandart.value !== 'versand');
-            checkValidation();
-            
-            // Fokus-Fix: Zum Button scrollen, wenn Formular aufklappt
-            if(versandart.value !== "") {
-                setTimeout(() => {
-                    document.getElementById('submitBtn').scrollIntoView({ behavior: 'smooth', block: 'end' });
-                }, 100);
-            }
+        document.getElementById('nav-left').onclick = () => {
+            currentGalleryIndex = (currentGalleryIndex - 1 + galleryImages.length) % galleryImages.length;
+            showGalleryImage(currentGalleryIndex);
         };
-
-        const img = document.getElementById('main-jersey-image');
-        const ind = document.getElementById('view-indicator');
-        function updateUI() {
-            img.src = images[currentColor][currentSide];
-            ind.textContent = currentSide === 'front' ? 'VORDERSEITE' : 'RÜCKSEITE';
-        }
-        document.getElementById('nav-left').onclick = () => { currentSide = currentSide === 'front' ? 'back' : 'front'; updateUI(); };
-        document.getElementById('nav-right').onclick = () => { currentSide = currentSide === 'front' ? 'back' : 'front'; updateUI(); };
-        img.onclick = () => { currentSide = currentSide === 'front' ? 'back' : 'front'; updateUI(); };
-        document.getElementById('farbeSelect').onchange = (e) => { currentColor = e.target.value; updateUI(); };
+        document.getElementById('nav-right').onclick = () => {
+            currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+            showGalleryImage(currentGalleryIndex);
+        };
+        galleryImg.onclick = () => {
+            currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+            showGalleryImage(currentGalleryIndex);
+        };
+        // Show first image on load
+        showGalleryImage(currentGalleryIndex);
 
         function checkValidation() {
             const v = versandart.value;
@@ -489,8 +526,10 @@
         };
 
         // === COUNTDOWN ENGINE ===
-        const targetDate = new Date("2026-06-01T12:00:00+02:00").getTime(); // Berlin Time (CEST)
+        const targetDate = new Date("2026-06-07T12:00:00+02:00").getTime(); // Berlin Time (CEST)
+        const expectedDeliveryDate = targetDate + (1000 * 60 * 60 * 24 * 40); // +40 Tage
         const countdownEl = document.getElementById('countdown');
+        const deliveryDateEl = document.getElementById('delivery-date');
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -504,7 +543,13 @@
                 seconds = Math.floor((distance % (1000 * 60)) / 1000);
             }
 
-            countdownEl.textContent = `Bestellfrist: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            countdownEl.textContent = `Bestellfrist: ${days}D ${hours}H ${minutes}M ${seconds}S`;
+
+            // Lieferdatum anzeigen
+            const deliveryDate = new Date(expectedDeliveryDate);
+            const deliveryDateStr = deliveryDate.toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' });
+            deliveryDateEl.textContent = `Voraussichtliche Lieferung: ${deliveryDateStr}`;
+
             if (distance <= 0) {
                 clearInterval(countdownInterval);
             }
