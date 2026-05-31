@@ -310,8 +310,7 @@
                     <h2><361 x VICO61 TRIKOT</h2>
                     <div id="countdown" class="countdown-container">00:00:00:00</div>
                     <div id="delivery-date" class="countdown-hint"></div>
-                    <p>Vom 11. Juni bis 19. Juli 2026 findet in den USA, Kanada & Mexiko die Fußball-WM der Männer statt.<br>
-                        Im Herzen von Kreuzberg wird das Spiel auf den Straßen ausgetragen und dafür darf das offizielle Trikot nicht fehlen!<br>
+                    <p>Im Herzen von Kreuzberg und Kreuzberg im Herzen<br>
                         <br>
                         <b></b>Der Preis ist auf Spendenbasis und der erzielte Erlös wird gleichmäßig an<br>
                         Heyva Sor a Kurdistanê e.V. & den Palestine Children's Relief Fund gespendet.</b></p>
@@ -396,18 +395,6 @@
         <div class="accordion-content">
             <p>Das Trikot hat einen sportlichen, leicht lockeren Schnitt (Athletic Fit). Wenn du es lieber baggy trägst, wähle eine Nummer größer.</p>
             <img src="size-chart.jpg" alt="Größentabelle" style="max-width:100%;margin-top:12px;border:1px solid #eee;border-radius:8px;box-shadow:0 2px 8px #0001;">
-        </div>
-    </details>
-
-    <details>
-        <summary>HERSTELLUNGSINFORMATIONEN</summary>
-        <div class="accordion-content">
-            <p>Das Trikot haben wir von Grund auf selbst in Kreuzberg designed.<br>
-                Nach intensiver Recherche und direktem Austausch mit verschiedenen Herstellern haben wir uns bei der Produktion bewusst für einen spezialisierten Experten in Guangzhou entschieden.<br>
-                Das Team von HEALY Apparel war von unserem Konzept sehr überzeugt und hat angeboten uns mit ihrer technischen Expertise bei der Umsetzung zu unterstützen. <br>
-                Sie zählen weltweit zu den Top-Herstellern für Performance- und Teamwear und weisen exzellente Zertifikate in den Bereichen faire Arbeitsbedingungen, moderne Technologie und Ökoschutz vor. (BSCI,WRAP,ISO 9001, ISO 14001)<br>
-                So können wir ein technisch hochqualitatives Produkt garantieren, das unter fairen Bedingungen produziert und zu einem ehrlichen Preis angeboten werden kann.
-            </p>
         </div>
     </details>
 
@@ -527,7 +514,7 @@
 
         // === COUNTDOWN ENGINE ===
         const targetDate = new Date("2026-06-07T12:00:00+02:00").getTime(); // Berlin Time (CEST)
-        const expectedDeliveryDate = targetDate + (1000 * 60 * 60 * 24 * 40); // +40 Tage
+        const expectedDeliveryDate = targetDate + (1000 * 60 * 60 * 24 * 60); // +60 Tage
         const countdownEl = document.getElementById('countdown');
         const deliveryDateEl = document.getElementById('delivery-date');
 
